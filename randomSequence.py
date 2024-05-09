@@ -278,7 +278,7 @@ def randomSequence(
         if gu.debugMessages:
             print(f"STEP: {i}/{steps}")
 
-        if roomOdds > 0 and seededRandom.randint(0, roomOdds) == 0:
+        if roomOdds > 0 and i > 1 and seededRandom.randint(0, roomOdds) == 0:
             # Enter a room
             if gu.debugMessages:
                 print("(ROOM)")
@@ -288,9 +288,9 @@ def randomSequence(
                     print("(this is the room (auto fail))")
                 rr.randomRoom(preText=initialText, autoFail=True)
             elif i == 0:
-                rr.randomRoom()
+                rr.randomRoom(preText=initialText)
             else:
-                rr.randomRoom()
+                rr.randomRoom(preText=initialText)
         else:
             if(initialText != None):
                 gu.text(initialText)
