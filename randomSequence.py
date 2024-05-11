@@ -104,7 +104,7 @@ def askRandomHallway(initialVerbArr=hallwayVerbs, hallwayName="hallway"):
 
 def generate_traveling_text(hallwayName):
     travelingTextArr = [
-        f"Your feet start to feel sore, after hours of traveling. Finally, After a short venture, you have landed in another set of {hallwayName}s to choose...",
+        f"Hours pass, You start to feel sore. Finally, After a short venture, you have landed in another set of {hallwayName}s to choose...",
         f"A new set of {hallwayName} stand in front of you. At first you decide to turn back, however, you soon realize that you have no choice.\nYou are now almost lost.\nYou must choose which other {hallwayName} to take...",
         "You jog along, trying to find your way, however it doesnt take long before you have more desicions to make. After a short venture, you have landed in another set of paths to choose from...",
         "After a short venture, you have landed in another set of paths to choose from...",
@@ -168,7 +168,6 @@ def generate_traveling_text(hallwayName):
         f"The {hallwayName}s offer no respite, only more questions. Which way will you go?",
         f"With each step, the {hallwayName}s multiply, a testament to the journey's challenge.",
         f"The {hallwayName}s are a puzzle, and you must piece together the route ahead.",
-        f"A fresh array of {hallwayName}s greets you, as if mocking your weary feet.",
         f"The {hallwayName}s loom large, a network of paths sprawling into the distance.",
         f"You're met with a new set of {hallwayName}s, each promising its own adventure.",
         f"The {hallwayName}s are a web, intricate and confusing. Which strand will you follow?",
@@ -305,6 +304,7 @@ def randomSequence(
                 steps += 1
             elif rand == 2:
                 steps -= 1
+        initialText = None
 
     if autoFail:
         if roomOdds > 0 and seededRandom.randint(0, 2) == 1:
@@ -319,3 +319,4 @@ def randomIfBlank(text, choices):
     else:
         return text
 
+randomSequence(initialText="Testing testig 123")
