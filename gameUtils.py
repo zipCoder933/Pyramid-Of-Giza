@@ -4,6 +4,11 @@ import random
 import re
 import hashlib
 
+#SETTINGS ===========================================================
+fastMode = False #Used for development
+debugMessages = False #Used for development
+#====================================================================
+
 # Your input string
 player_steps = []
 seededRandom = random.Random(0)
@@ -23,8 +28,6 @@ def addStep(step):
     
 
 
-fastMode = True #Used for development
-debugMessages = False #Used for development
 
 if(fastMode):
     print("Turbo mode: ON\nYou can select options via number keys.\n(1 = first option, 2 = second option and so forth)")

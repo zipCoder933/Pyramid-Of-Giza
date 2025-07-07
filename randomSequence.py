@@ -8,6 +8,8 @@ import randomRoom as rr
 r = random.Random()
 # r.seed(0)
 
+#Use seeded random as much as possible
+#Guarantees that the same seed will always result in the same random sequence
 seededRandom = gu.seededRandom
 
 
@@ -318,5 +320,3 @@ def randomIfBlank(text, choices):
         return r.choice(choices)
     else:
         return text
-
-randomSequence(initialText="Testing testig 123")
