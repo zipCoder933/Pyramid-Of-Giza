@@ -124,7 +124,7 @@ def map_game_path():
 
 
 start_text = "\n\n\n\n"+gu.icon
-start_text = start_text+"\nTHE GREAT PYRAMID OF GIZA\nText based adventure game.\n\n"
+start_text = start_text
 gu.revealLines(start_text)
 time.sleep(0.4)
 gu.revealLines(gu.formatLineLength("You are sitting inside the walls of the great pyramid of Giza. After three years of hard work, you have finally found the entrance of this 600 foot tall pyramid. " +

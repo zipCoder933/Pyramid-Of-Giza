@@ -243,7 +243,7 @@ def randomSequence(
     initialText=None,
     travelingTextArr=None,
     minSteps=1,
-    maxSteps=3,
+    maxSteps=7,
     roomOdds=0.4,
     initialVerbArr=hallwayVerbs,
     hallwayNameArr=hallwayNames,
