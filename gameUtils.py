@@ -192,6 +192,18 @@ def askFromList(arr):
 
     return askAndGetAll(val)
 
+def askFromList(arr):
+    val = ""
+    for i in range(len(arr)):
+        delimiter = ", "
+        if(i == len(arr)-2):
+            delimiter = ", or "
+        elif(i == len(arr)-1):
+            delimiter = ""
+        val = val+arr[i]+delimiter
+
+    return askAndGetAll(val)
+
 def formatLineLength(text, maxLength=18):
     # for preserving double line breaks
     text = text.replace("\n", "{line_break}")
@@ -215,7 +227,7 @@ def formatLineLength(text, maxLength=18):
     text = text.replace("{line_break}", "\n")
     return text
 
-
+#Used for the story telling animaiton and formatting
 def text(text):
     global askedPreviously
 

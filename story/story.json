@@ -1,0 +1,93 @@
+{
+  "story": "The explorer finds the entrance of the pyramid and enters, the air thick with ancient dust and mystery.",
+  "choices": {
+    "LOOK AROUND": {
+      "story": "You circle the entrance, spotting faded hieroglyphs and a half-buried tablet. It hints at hidden traps and a secret path into the tomb.",
+      "choices": {
+        "STUDY THE TABLET": {
+          "story": "You spend time carefully analyzing the tablet, deciphering symbols that warn of a false floor inside the main corridor.",
+          "choices": {
+            "ENTER CAREFULLY THROUGH MAIN DOOR": {
+              "story": "You step through the entrance cautiously, testing each step. You spot and avoid the weak flooring, safely reaching the antechamber lit only by slivers of light.",
+              "choices": {
+                "OPEN THE STONE CHEST": {
+                  "story": "The chest creaks open, revealing an ancient papyrus map titled 'Tomb of the Forgotten Pharaoh'. This could be the breakthrough you need!"
+                },
+                "INSPECT THE WALL CARVINGS": {
+                  "story": "You examine the carvings closely. One of them pushes inward with a soft click—suddenly, a hidden door groans open, revealing a dark stone staircase."
+                }
+              }
+            },
+            "SEARCH FOR AN ALTERNATIVE ENTRANCE": {
+              "story": "You walk the perimeter and notice a cracked stone wall. Behind it is a narrow, winding tunnel just big enough to crawl through.",
+              "choices": {
+                "LIGHT A TORCH AND ENTER": {
+                  "story": "With the tunnel lit by flickering flame, you see golden murals and inscriptions guiding you deeper into the tomb. A narrow stone bridge leads across a chasm."
+                },
+                "FEEL YOUR WAY THROUGH THE DARK": {
+                  "story": "You move slowly, hands against cold stone—but a moment's slip sends you tumbling into a hidden pit trap. The tomb claims another soul. Your journey ends here."
+                }
+              }
+            }
+          }
+        },
+        "TAKE A PHOTO AND MOVE ON": {
+          "story": "You quickly snap a photo of the tablet and proceed into the pyramid, unaware of the trap just ahead.",
+          "choices": {
+            "WALK STRAIGHT AHEAD WITHOUT CAUTION": {
+              "story": "Your footstep triggers a collapse and you plunge into a sandy pit chamber. The walls are too steep to climb out unaided.",
+              "choices": {
+                "CALL FOR HELP": {
+                  "story": "You shout for assistance, but no signal and no response comes. The echo of your voice fades into the shadows."
+                },
+                "LOOK FOR A HIDDEN EXIT": {
+                  "randomSequence": {
+                    "initialText": "You inspect the chamber and discover a loose brick. Behind it is a stone tunnel and a rusted iron ladder leading upward. When you reach the top, you are surrounded by tunnels.",
+                    "minSteps": 1,
+                    "maxSteps": 3,
+                    "roomOdds": 0.0,
+                    "hallwayNames": ["tunnel"]
+                  },
+                  "story": "Exausted, you run out of breath, and fall into a dark pit trap. The tomb claims another soul. Your journey ends here."
+                }
+              }
+            },
+            "STEP CAREFULLY AND TEST THE FLOOR": {
+              "story": "You inch forward, testing the stones as you go. A weak panel gives way beneath your boot—but you stop in time. You reach a chamber glowing with torchlight and shimmering treasure. You're safe for now."
+            }
+          }
+        }
+      }
+    },
+    "ENTER RIGHT AWAY": {
+      "story": "Without hesitation, you stride into the shadowy entrance. The crunch of ancient debris echoes as your boots meet the stone floor.",
+      "choices": {
+        "FOLLOW THE MAIN CORRIDOR STRAIGHT AHEAD": {
+          "story": "The hallway opens into a grand chamber with sand-dusted tiles and three massive stone doors, each carved with a different symbol.",
+          "choices": {
+            "OPEN THE LEFT DOOR WITH THE SNAKE EMBLEM": {
+              "story": "As the door creaks open, a gust of wind slams into you. A massive statue animates and blocks your path. The snake's eyes begin to glow..."
+            },
+            "OPEN THE CENTER DOOR WITH THE SUN DISK": {
+              "story": "You find a stone staircase spiraling downward into the depths of the pyramid. A faint, rhythmic drumbeat seems to echo from below."
+            },
+            "OPEN THE RIGHT DOOR WITH THE ANKH SYMBOL": {
+              "story": "The room beyond appears empty... until the floor beneath you begins to tremble. Dust falls from the ceiling and the tiles crack. Something is about to collapse!"
+            }
+          }
+        },
+        "TAKE THE NARROW SIDE PASSAGE TO THE LEFT": {
+          "story": "The tight hallway squeezes you on both sides. Strange whispers seem to float through the still air. You come upon a mural faintly glowing in the dark.",
+          "choices": {
+            "TOUCH THE GLOWING MURAL": {
+              "story": "Your fingers press into the wall. The stone shifts, revealing a staircase spiraling down into silence. You descend toward secrets long buried."
+            },
+            "SKETCH THE MURAL IN YOUR NOTEBOOK": {
+              "story": "You carefully copy the mural's symbols into your notebook. You don’t know what they mean yet—but they may save your life later."
+            }
+          }
+        }
+      }
+    }
+  }
+}

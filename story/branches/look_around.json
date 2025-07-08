@@ -1,0 +1,12 @@
+{
+  "story": "You circle the entrance, spotting faded hieroglyphs and a half-buried tablet. It hints at hidden traps and a secret path.",
+  "ask": "Do you STUDY the tablet or TAKE a PHOTO and move on?",
+  "choices": {
+    "STUDY": {
+      "path": "branches/look_around/study_tablet.json"
+    },
+    "TAKE A PHOTO": {
+      "path": "branches/look_around/take_photo.json"
+    }
+  }
+}
