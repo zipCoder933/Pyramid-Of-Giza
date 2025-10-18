@@ -1,91 +1,188 @@
 {
-  "story": "The explorer finds the entrance of the pyramid and enters, the air thick with ancient dust and mystery.",
+  "story": "Your ship, the Horizon Voyager, drifts silently through the void of Sector Delta-9. You and your crew have been tracing a mysterious energy signal for days, one not logged in any galactic database. Suddenly, the signal spikes \u2014 an ancient alien beacon pulses from the surface of an uncharted planet covered in clouds of electric storms.",
   "choices": {
-    "LOOK AROUND": {
-      "story": "You circle the entrance, spotting faded hieroglyphs and a half-buried tablet. It hints at hidden traps and a secret path into the tomb.",
+    "land on the planet": {
+      "story": "You engage the descent thrusters, punching through turbulent clouds and lightning bursts that scrape the ship\u2019s shields. The landscape below glows faintly blue, dotted with metallic ruins half-swallowed by crystalline vegetation. The alien signal hums in your comms, rhythmic like a heartbeat.",
       "choices": {
-        "STUDY THE TABLET": {
-          "story": "You spend time carefully analyzing the tablet, deciphering symbols that warn of a false floor inside the main corridor.",
+        "EXPLORE THE MAIN RUIN": {
+          "story": "You lead a team of explorers toward a colossal alien temple. Its door is circular, marked with runes that shift and rearrange like living text. The air hums with static energy, and your motion scanner detects movement deep within.",
           "choices": {
-            "ENTER CAREFULLY THROUGH MAIN DOOR": {
-              "story": "You step through the entrance cautiously, testing each step. You spot and avoid the weak flooring, safely reaching the antechamber lit only by slivers of light.",
+            "DECODE THE RUNES": {
+              "story": "Your ship\u2019s linguistics AI processes the symbols, slowly revealing their meaning. They are warnings \u2014 something was sealed away here to protect the galaxy from its power. The final symbol translates roughly to 'Containment Breach Imminent.'",
               "choices": {
-                "OPEN THE STONE CHEST": {
-                  "story": "The chest creaks open, revealing an ancient papyrus map titled 'Tomb of the Forgotten Pharaoh'. This could be the breakthrough you need!"
+                "OPEN THE DOOR ANYWAY": {
+                  "story": "The runes pulse brighter as you press your hand to the console. With a groaning hiss, the door slides open. Inside, a chamber filled with floating crystals surrounds a massive orb radiating blue light. It speaks inside your mind, offering infinite knowledge for a simple exchange \u2014 your memories.",
+                  "randomSequence": {
+                    "initialText": "You drift through the silent corridors of the derelict ship, your helmet light flickering as you float deeper into the darkness...",
+                    "minSteps": 2,
+                    "maxSteps": 5,
+                    "roomOdds": 0.4,
+                    "hallwayNames": [
+                      "corridor",
+                      "maintenance shaft",
+                      "airlock tunnel",
+                      "deckway",
+                      "reactor conduit"
+                    ]
+                  }
                 },
-                "INSPECT THE WALL CARVINGS": {
-                  "story": "You examine the carvings closely. One of them pushes inward with a soft click—suddenly, a hidden door groans open, revealing a dark stone staircase."
+                "SEARCH FOR A SIDE ENTRANCE": {
+                  "story": "You circle the temple and find a cracked ventilation shaft. Crawling through, you enter a chamber filled with strange alien machinery. One console still functions, its display showing an energy map of the entire planet. As you are looking around, the door closes behind you with a thud. A faint glow seeps from the edges. The oxygen gauge on your wrist begins to flash red — you need to find power soon.",
+                  "choices": {
+                    "Try to open the airlock manually": {
+                      "randomSequence": {
+                        "initialText": "You grip the manual override lever, pulling with all your strength. The door creaks open, revealing another maze of dimly lit passageways...",
+                        "minSteps": 2,
+                        "maxSteps": 4,
+                        "roomOdds": 0.3,
+                        "hallwayNames": [
+                          "maintenance corridor",
+                          "engine deck",
+                          "cargo bay tunnel"
+                        ]
+                      },
+                      "story": "You enter what looks like an engineering section. The air is thick with coolant mist and the hum of malfunctioning drones fills the space.",
+                      "choices": {
+                        "Inspect the drones": {
+                          "randomSequence": {
+                            "initialText": "You move closer, your scanner flickering as you step among tangled wiring and fallen machinery.",
+                            "minSteps": 1,
+                            "maxSteps": 2,
+                            "roomOdds": 0.2,
+                            "hallwayNames": [
+                              "maintenance route",
+                              "engineering hallway"
+                            ]
+                          },
+                          "story": "One of the drones suddenly powers on. Its optics lock onto you with a menacing red glare.",
+                          "choices": {
+                            "Fight the drone": {
+                              "story": "You blast the drone with your plasma cutter. It collapses in a shower of sparks. A nearby door unlocks — maybe a way out?"
+                            },
+                            "Run away": {
+                              "story": "You sprint down the hall, sparks flying from the walls as laser fire grazes your suit. You duck into a storage bay and catch your breath."
+                            }
+                          }
+                        },
+                        "Search for a power terminal": {
+                          "randomSequence": {
+                            "initialText": "You navigate through the reactor conduits, guided by the flickering lights of emergency panels.",
+                            "minSteps": 2,
+                            "maxSteps": 7,
+                            "roomOdds": 0.8,
+                            "hallwayNames": [
+                              "reactor conduit",
+                              "plasma chamber",
+                              "core passage"
+                            ]
+                          },
+                          "story": "You find a still-functioning power terminal. Its screen blinks faintly: SYSTEM OVERRIDE AVAILABLE.",
+                          "choices": {
+                            "Attempt to override power grid": {
+                              "story": "You bypass the security protocols. The ship’s main power hums to life — lights flicker, and gravity stabilizes."
+                            },
+                            "Leave it alone": {
+                              "story": "You decide it’s too risky to tamper with ancient ship systems. You back away, the low hum of power fading into silence."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Look for another route": {
+                      "randomSequence": {
+                        "initialText": "You push off a bulkhead, floating down a narrow ventilation shaft lined with flickering cables.",
+                        "minSteps": 4,
+                        "maxSteps": 6,
+                        "roomOdds": 0.35,
+                        "hallwayNames": [
+                          "vent tunnel",
+                          "access conduit",
+                          "observation hallway"
+                        ]
+                      },
+                      "story": "You emerge into a vast observation chamber. The shattered viewports reveal a breathtaking sight — a dying star on the horizon.",
+                      "choices": {
+                        "Admire the view": {
+                          "story": "For a moment, you forget the danger. The cosmic beauty fills you with awe and dread in equal measure."
+                        },
+                        "Search for an exit": {
+                          "randomSequence": {
+                            "initialText": "You drift past floating debris, moving toward a faint blinking light on the far wall.",
+                            "minSteps": 2,
+                            "maxSteps": 4,
+                            "roomOdds": 0.25,
+                            "hallwayNames": [
+                              "escape conduit",
+                              "emergency deck",
+                              "lifepod access"
+                            ]
+                          },
+                          "story": "You find a functioning escape pod — its systems are ancient but still responsive. Salvation may be within reach."
+                        }
+                      }
+                    }
+                  }
                 }
               }
             },
-            "SEARCH FOR AN ALTERNATIVE ENTRANCE": {
-              "story": "You walk the perimeter and notice a cracked stone wall. Behind it is a narrow, winding tunnel just big enough to crawl through.",
-              "choices": {
-                "LIGHT A TORCH AND ENTER": {
-                  "story": "With the tunnel lit by flickering flame, you see golden murals and inscriptions guiding you deeper into the tomb. A narrow stone bridge leads across a chasm."
-                },
-                "FEEL YOUR WAY THROUGH THE DARK": {
-                  "story": "You move slowly, hands against cold stone—but a moment's slip sends you tumbling into a hidden pit trap. The tomb claims another soul. Your journey ends here."
-                }
-              }
+            "USE EXPLOSIVES TO OPEN THE DOOR": {
+              "story": "You plant a small plasma charge and take cover. The blast echoes through the ruin, scattering dust and glowing shards. As the smoke clears, the door stands open, revealing a corridor lined with ancient stasis pods. One pod hisses, and something begins to move inside."
             }
           }
         },
-        "TAKE A PHOTO AND MOVE ON": {
-          "story": "You quickly snap a photo of the tablet and proceed into the pyramid, unaware of the trap just ahead.",
+        "SCAN THE AREA FIRST": {
+          "story": "You decide to study the surroundings before entering. The scanners detect faint life signs and a dense energy field beneath the surface. The signal\u2019s source appears split, with one part in the ruins and another deep underground.",
           "choices": {
-            "WALK STRAIGHT AHEAD WITHOUT CAUTION": {
-              "story": "Your footstep triggers a collapse and you plunge into a sandy pit chamber. The walls are too steep to climb out unaided.",
+            "INVESTIGATE THE ENERGY SOURCE": {
+              "story": "You trek across the landscape to a canyon filled with glowing spires. At the center is a pulsating fissure emitting waves of pure radiation. Inside the crack, you spot an enormous alien device, still active after eons.",
               "choices": {
-                "CALL FOR HELP": {
-                  "story": "You shout for assistance, but no signal and no response comes. The echo of your voice fades into the shadows."
+                "ACTIVATE THE DEVICE": {
+                  "story": "The ground trembles as the machine awakens. A holographic projection fills the sky, showing a star map \u2014 thousands of systems connected by shimmering lines. A message echoes: 'The Architects return. Prepare the gateways.'"
                 },
-                "LOOK FOR A HIDDEN EXIT": {
-                  "randomSequence": {
-                    "initialText": "You inspect the chamber and discover a loose brick. Behind it is a stone tunnel and a rusted iron ladder leading upward. When you reach the top, you are surrounded by tunnels.",
-                    "minSteps": 1,
-                    "maxSteps": 3,
-                    "roomOdds": 0.0,
-                    "hallwayNames": ["tunnel"]
-                  },
-                  "story": "Exausted, you run out of breath, and fall into a dark pit trap. The tomb claims another soul. Your journey ends here."
+                "COLLECT DATA AND RETURN": {
+                  "story": "You record the readings and retreat. When you transmit the data to your ship, the comms suddenly distort. A new voice, calm and unfamiliar, speaks from the static: 'You have seen too much. You must not leave.'"
                 }
               }
             },
-            "STEP CAREFULLY AND TEST THE FLOOR": {
-              "story": "You inch forward, testing the stones as you go. A weak panel gives way beneath your boot—but you stop in time. You reach a chamber glowing with torchlight and shimmering treasure. You're safe for now."
+            "SET UP CAMP AND OBSERVE": {
+              "story": "You establish a research camp near the ship. As night falls, the twin moons rise and strange lights begin to drift over the horizon. One crew member swears they see figures moving in the distance \u2014 tall, luminous beings watching silently. You hear a noise behind you, suddenly the ground explodes beneath you, leaving you unconscous.",
+              "choices": {
+                "WAKE UP": {
+                  "randomSequence": {
+                    "initialText": "You find yourself in a strange dark catacomb, surrounded by alien markings",
+                    "minSteps": 5,
+                    "maxSteps": 10,
+                    "roomOdds": 0.25,
+                    "hallwayNames": [
+                      "Karik counsel",
+                      "dimly lit hallway",
+                      "life support deck"
+                    ]
+                  },
+                  "story": "You make it to the end, and find your way out, however its too late, the aliens have already taken over the entire base camp. Mission failed"
+                }
+              }
             }
           }
         }
       }
     },
-    "ENTER RIGHT AWAY": {
-      "story": "Without hesitation, you stride into the shadowy entrance. The crunch of ancient debris echoes as your boots meet the stone floor.",
+    "STAY IN ORBIT AND DEPLOY A PROBE": {
+      "story": "You decide to play it safe and send down a reconnaissance probe. Its camera feed transmits stunning views of alien ruins, but after a few minutes the video cuts to static. A distorted signal floods the ship\u2019s systems \u2014 rhythmic, coded, and hauntingly familiar.",
       "choices": {
-        "FOLLOW THE MAIN CORRIDOR STRAIGHT AHEAD": {
-          "story": "The hallway opens into a grand chamber with sand-dusted tiles and three massive stone doors, each carved with a different symbol.",
+        "DECODE THE TRANSMISSION": {
+          "story": "Your communications officer works quickly, isolating the signal. It resolves into an image: a vast stone face half-buried in sand, with a single glowing eye. The ship\u2019s lights flicker, and your AI warns, 'External influence detected. Firewall breach in progress.'",
           "choices": {
-            "OPEN THE LEFT DOOR WITH THE SNAKE EMBLEM": {
-              "story": "As the door creaks open, a gust of wind slams into you. A massive statue animates and blocks your path. The snake's eyes begin to glow..."
+            "RESPOND TO THE SIGNAL": {
+              "story": "You broadcast a greeting in multiple languages. The reply is immediate \u2014 a booming voice fills the cockpit: 'We remember your kind. You should not have come back.' The ship begins to drift toward the planet without your control."
             },
-            "OPEN THE CENTER DOOR WITH THE SUN DISK": {
-              "story": "You find a stone staircase spiraling downward into the depths of the pyramid. A faint, rhythmic drumbeat seems to echo from below."
-            },
-            "OPEN THE RIGHT DOOR WITH THE ANKH SYMBOL": {
-              "story": "The room beyond appears empty... until the floor beneath you begins to tremble. Dust falls from the ceiling and the tiles crack. Something is about to collapse!"
+            "CUT ALL COMMUNICATIONS": {
+              "story": "You sever the connection, but the ship\u2019s navigation system malfunctions. You are pulled into orbit around a massive, artificial moon. Its surface opens like an iris, revealing a docking port shaped exactly to your vessel\u2019s dimensions."
             }
           }
         },
-        "TAKE THE NARROW SIDE PASSAGE TO THE LEFT": {
-          "story": "The tight hallway squeezes you on both sides. Strange whispers seem to float through the still air. You come upon a mural faintly glowing in the dark.",
-          "choices": {
-            "TOUCH THE GLOWING MURAL": {
-              "story": "Your fingers press into the wall. The stone shifts, revealing a staircase spiraling down into silence. You descend toward secrets long buried."
-            },
-            "SKETCH THE MURAL IN YOUR NOTEBOOK": {
-              "story": "You carefully copy the mural's symbols into your notebook. You don’t know what they mean yet—but they may save your life later."
-            }
-          }
+        "FOLLOW THE PROBE\u2019S LAST COORDINATES": {
+          "story": "You pilot the Horizon Voyager to the last known position of the probe. Lightning flashes around you, illuminating the colossal remains of an alien starship buried in the clouds. As you approach, your ship\u2019s sensors detect faint power readings coming from within."
         }
       }
     }

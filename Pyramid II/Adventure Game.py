@@ -35,21 +35,21 @@ def processRandomSequence(randomSequence):
                         roomOdds=roomOdds,
                         hallwayNameArr=hallwayNameArr)
 
+
+
 def play_node(base_dir):
     node = load_json(base_dir+"/story.json")
     while True:
-        banner = load_file(base_dir+"/banner.txt")
-        gu.revealLines(banner)
-
         keys = list(node.keys())
-        # and keys.index("randomSequence") < keys.index("story")
-        if("randomSequence" in node): #Random Sequence
+        if("randomSequence" in node): #Random Sequence comes first
+            if(gu.debugMessages):
+                print("Found random sequence!")
             processRandomSequence(node["randomSequence"])
 
         story = node["story"]
 
         if("choices" in node):#Story
-            gu.text(story)
+            gu.text(story)#tell the story after the random sequence!
             options = list(node["choices"].keys())
             choice,choice_num = gu.askFromList(options)
             selected = options[choice_num-1]
@@ -70,5 +70,14 @@ def play_node(base_dir):
             gu.end(story)
             return
 
+while True:
+    base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "story")
+    banner = load_file(base_dir+"/banner.txt")
+    gu.revealLines(banner)
+    play_node(base_dir)
 
-play_node(os.path.join(os.path.dirname(os.path.abspath(__file__)), "story"))
+    out = input("Play again? (Y/n) ").strip().lower()
+    if(out == "n" or out == "no" or out == "exit"):
+        break
+    else:
+        print("\n\n")
