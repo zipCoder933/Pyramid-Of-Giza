@@ -6,6 +6,10 @@ import randomSequence as rs
 def load_json(filepath):
     with open(filepath, 'r') as file:
         return json.load(file)
+    
+def load_file(filepath):
+    with open(filepath, 'r') as file:
+        return file.read()
 
 def processRandomSequence(randomSequence):
     initialText = None
@@ -31,11 +35,12 @@ def processRandomSequence(randomSequence):
                         roomOdds=roomOdds,
                         hallwayNameArr=hallwayNameArr)
 
-def play_node(base_file):
-    node = load_json(base_file)
-    base_dir = os.path.dirname(base_file)
-
+def play_node(base_dir):
+    node = load_json(base_dir+"/story.json")
     while True:
+        banner = load_file(base_dir+"/banner.txt")
+        gu.revealLines(banner)
+
         keys = list(node.keys())
         # and keys.index("randomSequence") < keys.index("story")
         if("randomSequence" in node): #Random Sequence
@@ -66,5 +71,4 @@ def play_node(base_file):
             return
 
 
-base_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "story", "story.json")
-play_node(base_file)
+play_node(os.path.join(os.path.dirname(os.path.abspath(__file__)), "story"))
