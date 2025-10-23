@@ -4,7 +4,11 @@ import story as st
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 while(True):
-    st.startGame()
+    try:
+        st.startGame()
+    except SystemExit:
+        pass
+    
     while(True):
         val = input("\n\nDo you want to play again? (Y/n): ").lower().strip()
         if(val == 'y' or val == 'yes'):
